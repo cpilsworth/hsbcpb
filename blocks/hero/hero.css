@@ -1,5 +1,5 @@
 main .hero-container > div {
-  max-width: unset;
+  /* max-width: unset; */
 }
 
 main .hero-container {
