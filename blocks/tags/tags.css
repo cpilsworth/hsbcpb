@@ -1,0 +1,19 @@
+main .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    align-items: baseline;
+    font-size: 16px;
+
+    & div.tags-container {
+        display: flex;
+        gap: 12px;
+        padding-left: 16px;
+
+        & span {
+            font-size: 14px;
+            border: 1px solid #d7d8d6;
+            padding: 8px 12px;
+        }
+    }
+}

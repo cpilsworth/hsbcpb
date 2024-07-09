@@ -4,6 +4,51 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+header .nav-global {
+  display: flex;
+  display: none;
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style-type: none;
+    justify-content: flex-end;
+    gap: 32px;
+    margin: 0;    
+    background-color: black;
+    color: white;
+    padding-right: 48px;
+
+    & li {
+      padding: 0px 16px;
+      display: flex;
+      align-items: center;
+      height: 36px;
+    }
+
+    & li a {
+      font-size: 12px;
+    }
+
+    & li a::after {
+      content: "^";
+      display: inline-block;
+      position: relative;
+      top: -2px;
+      margin-left: 5px;
+      transform: rotate(180deg);
+    }
+
+    & li:last-child {
+      background-color: red;
+    }
+  }
+
 }
 
 header nav {
@@ -14,7 +59,7 @@ header nav {
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
   gap: 0 2em;
-  margin: auto;
+  margin: 0;
   max-width: 1264px;
   height: var(--nav-height);
   padding: 0 1rem;
@@ -40,11 +85,17 @@ header nav[aria-expanded='true'] {
   header nav {
     display: flex;
     justify-content: space-between;
+    min-width: 1200px;
+    max-width: 1200px;
   }
 
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
+  }
+
+  header .nav-global {
+    display: flex;
   }
 }
 

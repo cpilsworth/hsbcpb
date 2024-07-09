@@ -42,6 +42,22 @@ async function loadFonts() {
   }
 }
 
+function buildTagsBlock(main) {
+  const tags = document.querySelector('main div.tags');
+  if (tags) { // run
+    return;
+  }
+  const mainSection = document.querySelector('main div:nth-child(2)');
+  const tagBlock = document.createElement('div');
+  tagBlock.classList.add('tags');
+  const tagsContentOuter = document.createElement('div');
+  const tagsContentInner = document.createElement('div');
+  tagsContentInner.innerText = "This insight is about";
+  tagsContentOuter.appendChild(tagsContentInner);
+  tagBlock.appendChild(tagsContentOuter);
+  mainSection.insertBefore(tagBlock, mainSection.firstChild);
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -49,6 +65,7 @@ async function loadFonts() {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildTagsBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

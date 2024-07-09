@@ -87,6 +87,32 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ *  create a div containing a ul with two li elements each containing a link ("global" and "log on")
+ */
+function createGlobalNav() {
+  const ul = document.createElement('ul');
+  const li1 = document.createElement('li');
+  const li2 = document.createElement('li');
+  const link1 = document.createElement('a');
+  const link2 = document.createElement('a');
+
+  link1.textContent = 'global';
+  link2.textContent = 'log on';
+
+  li1.appendChild(link1);
+  li2.appendChild(link2);
+
+  ul.appendChild(li1);
+  ul.appendChild(li2);
+
+  const globalNav = document.createElement('div');
+  globalNav.className = 'nav-global';
+  globalNav.appendChild(ul);
+  
+  return globalNav;
+}
+
+/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
@@ -144,6 +170,12 @@ export default async function decorate(block) {
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+  
+
+  const globalNav = createGlobalNav();
+  navWrapper.append(globalNav);
+
   navWrapper.append(nav);
   block.append(navWrapper);
+
 }

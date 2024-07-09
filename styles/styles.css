@@ -18,6 +18,7 @@
   --light-color: #eee;
   --dark-color: #ccc;
   --text-color: black;
+  --brand-color: #e20512;
 
   /* fonts */
   --body-font-family: "HSBC Univers Next Regular", "Arial", sans-serif;
@@ -25,9 +26,9 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 16px;
+  --body-font-size-m: 20px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 12px;
 
   /* heading sizes */
   --heading-font-size-xxl: 48px;
@@ -38,7 +39,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 76px;
 }
 
 @font-face {
@@ -223,4 +224,40 @@ main .section {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+}
+
+main .section.fragment-container.top-border {
+  border-top: 1px solid var(--dark-color);
+}
+
+
+main .section.link-title, main .section.this-insight-is-aboutlink-title {
+
+  & h2 {
+    font-size: 22px;
+    font-weight: 300;    
+    color: var(--text-color);
+
+    & a {
+      color: var(--text-color);
+      font-weight: 300;    
+    }
+
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & h2::after {
+    content: ">";
+    padding-left: 0.5em;
+    color: var(--brand-color);
+  }
+
+}
+
+.icon-linkedin, .icon-youtube {
+  margin-right: 16px;
+  height: 32px;
+  width: auto;
 }
