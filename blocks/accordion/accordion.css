@@ -1,5 +1,6 @@
 .accordion details {
-    border: 1px solid var(--dark-color);
+    border-top: 1px solid var(--dark-color);
+    border-bottom: 1px solid var(--dark-color);
   }
   
   /* stylelint-disable-next-line no-descending-specificity */
