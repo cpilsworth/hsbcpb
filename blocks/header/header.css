@@ -87,6 +87,7 @@ header nav[aria-expanded='true'] {
     justify-content: space-between;
     min-width: 1200px;
     max-width: 1200px;
+    margin: auto;
   }
 
   header nav[aria-expanded='true'] {
