@@ -9,10 +9,14 @@ main .hero-container {
 }
 
 .hero h1 {
+  font-size: 38px;
+  font-weight: 300;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  background-color: white;
+  color: black;
+  padding: 32px 16px;
 }
 
 .hero picture {
@@ -27,4 +31,17 @@ main .hero-container {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+
+@media (width >= 900px) {
+  .hero div p{
+    display: flex;
+    
+  }
+  .hero h1 {
+    max-width: 50%;
+    text-align: left;
+    justify-self: start;
+  }
 }
